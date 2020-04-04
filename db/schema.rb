@@ -13,6 +13,7 @@
 ActiveRecord::Schema.define(version: 2020_04_17_093432) do
 
   # These are extensions that must be enabled in order to support this database
+  enable_extension "pgcrypto"
   enable_extension "plpgsql"
 
   create_table "access_tokens", force: :cascade do |t|
@@ -198,6 +199,7 @@ ActiveRecord::Schema.define(version: 2020_04_17_093432) do
     t.boolean "locked", default: false
     t.jsonb "additional_attributes"
     t.bigint "contact_inbox_id"
+    t.uuid "uuid", default: -> { "gen_random_uuid()" }, null: false
     t.index ["account_id", "display_id"], name: "index_conversations_on_account_id_and_display_id", unique: true
     t.index ["account_id"], name: "index_conversations_on_account_id"
     t.index ["contact_inbox_id"], name: "index_conversations_on_contact_inbox_id"
