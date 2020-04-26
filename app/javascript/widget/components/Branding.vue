@@ -1,13 +1,4 @@
 <template>
-  <a
-    class="branding"
-    href="https://www.chatwoot.com?utm_source=widget_branding"
-    rel="noreferrer noopener nofollow"
-    target="_blank"
-  >
-    <img src="~widget/assets/images/logo.svg" />
-    <span>Powered by Chatwoot</span>
-  </a>
 </template>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
